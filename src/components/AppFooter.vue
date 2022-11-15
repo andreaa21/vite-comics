@@ -138,7 +138,7 @@ export default {
             }
             a{
                 text-decoration: none;
-                color: grey;
+                color: #959595;
                 font-size: .8rem;
             }
         }
@@ -158,6 +158,7 @@ export default {
                 color: white;
                 background-color: rgba($color: #000000, $alpha: 0);
                 border: 2px solid $main-color;
+                cursor: pointer;
             }
             .socials{
                 display: flex;

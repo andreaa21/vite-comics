@@ -1,6 +1,62 @@
 <script>
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data(){
+        return{
+            menu: [
+                {
+                    text: 'Characters',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'Comics',
+                    href: '#',
+                    current: true
+                },
+                {
+                    text: 'movies',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'tv',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'games',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'collectibles',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'videos',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'fans',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'news',
+                    href: '#',
+                    current: false
+                },
+                {
+                    text: 'shop',
+                    href: '#',
+                    current: false
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -13,16 +69,11 @@ export default {
 
         <nav>
             <ul>
-                <li><a href="#">Characters</a></li>
-                <li><a class="active" href="#">Comics</a></li>
-                <li><a href="#">movies</a></li>
-                <li><a href="#">tv</a></li>
-                <li><a href="#">games</a></li>
-                <li><a href="#">collectibles</a></li>
-                <li><a href="#">videos</a></li>
-                <li><a href="#">fans</a></li>
-                <li><a href="#">news</a></li>
-                <li><a href="#">shop</a></li>
+                <li
+                v-for="(item, index) in menu"
+                :key="index"
+                :class="{'active': item.current}"
+                ><a href='item.href'>{{item.text}}</a></li>
             </ul>
         </nav>
 
@@ -48,6 +99,9 @@ export default {
 
             .logo{
                 padding: 1rem 0;
+                img{
+                    width: 80%;
+                }
             }
             nav{
                 height: 100%;
@@ -59,7 +113,10 @@ export default {
                 height: 100%;
                 li{
                     margin: 0 .5rem;
-                }
+                }                    // &:hover{
+                    //     color: $main-color;
+                    //     border-bottom: 4px solid $main-color;
+                    // }
                 a{
                     color: $header-link-color;
                     height: 100%;
@@ -67,8 +124,7 @@ export default {
                     text-decoration: none;
                     text-transform: uppercase;
                     font-size: .8rem;
-                    &:hover,
-                    &.active{
+                    &:hover{
                         color: $main-color;
                         border-bottom: 4px solid $main-color;
                     }

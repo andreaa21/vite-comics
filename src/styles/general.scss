@@ -10,6 +10,11 @@
     background-color: rgba($color: #ff0000, $alpha: 0.25);
 }
 
+.active {
+    color: $main-color;
+    border-bottom: 4px solid $main-color;
+}
+
 img {
     max-width: 100%;
 }
