@@ -248,6 +248,7 @@ export default {
                 img{
                      width: 90%;
                     transform: rotate(-30deg);
+                    opacity: .5;
                 }
             }
             h3{
