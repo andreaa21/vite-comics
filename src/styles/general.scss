@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+.debug {
+    background-color: rgba($color: #ff0000, $alpha: 0.25);
+}
+
 img {
     max-width: 100%;
 }
