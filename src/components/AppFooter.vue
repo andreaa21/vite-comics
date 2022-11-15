@@ -194,7 +194,7 @@ export default {
                 </div>
             </div>
             <div class="logo deubg">
-                <img src="/dc-logo.png" alt="">
+                <img src="../assets/img/dc-logo-bg.png" alt="">
             </div>
         </div>
     </div>
@@ -245,11 +245,6 @@ export default {
                 width: 50%;
                 overflow: hidden;
                 @include centerFlex('both');
-                img{
-                     width: 90%;
-                    transform: rotate(-30deg);
-                    opacity: .5;
-                }
             }
             h3{
                 color: white;
