@@ -209,7 +209,7 @@ export default {
                 <li
                 v-for="(item, index) in socials"
                 :key="index"
-                ><a href="#"><img :src="getImgPath(item.src)" alt=""></a></li>
+                ><a href="#"><img :src="getImgPath(item.src)" alt="{{item.href}}"></a></li>
             </ul>
         </div>
         </div>

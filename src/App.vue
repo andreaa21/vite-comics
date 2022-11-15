@@ -3,13 +3,15 @@
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
+import ComponenteAggiuntivo from './components/ComponenteAggiuntivo.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+    ComponenteAggiuntivo
   }
 }
 </script>
@@ -17,6 +19,7 @@ export default {
 <template>
   <AppHeader />
   <AppMain />
+  <Componente-Aggiuntivo />
   <AppFooter />
 </template>
 
