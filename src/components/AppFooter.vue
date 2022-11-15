@@ -1,6 +1,141 @@
 <script>
 export default {
-    name: 'AppFooter'
+    name: 'AppFooter',
+    data(){
+        return {
+            dcComics: [
+                {
+                    text: 'Characters',
+                    href: '#'
+                },
+                {
+                    text: 'Comics',
+                    href: '#'
+                },
+                {
+                    text: 'Movies',
+                    href: '#'
+                },
+                {
+                    text: 'TV',
+                    href: '#'
+                },
+                {
+                    text: 'Games',
+                    href: '#'
+                },
+                {
+                    text: 'Videos',
+                    href: '#'
+                },
+                {
+                    text: 'News',
+                    href: '#'
+                }
+            ],
+            shop: [
+                {
+                    text: 'Shop DC',
+                    href: '#'
+                },
+                {
+                    text: 'Shop DC Collectibles',
+                    href: '#'
+                }
+            ],
+            dc: [
+                {
+                    text: 'Terms Of Use',
+                    href: '#'
+                },
+                {
+                    text: 'Privacy Policy (new)',
+                    href: '#'
+                },
+                {
+                    text: 'Advertising',
+                    href: '#'
+                },
+                {
+                    text: 'Job',
+                    href: '#'
+                },
+                {
+                    text: 'Subscriptions',
+                    href: '#'
+                },
+                {
+                    text: 'Talent Workshops',
+                    href: '#'
+                },
+                {
+                    text: 'CPSC Certificates',
+                    href: '#'
+                },
+                {
+                    text: 'Ratings',
+                    href: '#'
+                },
+                {
+                    text: 'Shop Help',
+                    href: '#'
+                },
+                {
+                    text: 'Contact Us',
+                    href: '#'
+                }
+            ],
+            sites: [
+                {
+                    text: 'DC',
+                    href: '#'
+                },
+                {
+                    text: 'MAD Magazine',
+                    href: '#'
+                },
+                {
+                    text: 'DC Kids',
+                    href: '#'
+                },
+                {
+                    text: 'DC Universe',
+                    href: '#'
+                },
+                {
+                    text: 'DC Power Visa',
+                    href: '#'
+                }
+            ],
+            socials: [
+                {
+                    src: 'footer-facebook.png',
+                    href: '#'
+                },
+                {
+                    src: 'footer-pinterest.png',
+                    href: '#'
+                },
+                {
+                    src: 'footer-twitter.png',
+                    href: '#'
+                },
+                {
+                    src: 'footer-youtube.png',
+                    href: '#'
+                },
+                {
+                    src: 'footer-periscope.png',
+                    href: '#'
+                }
+            ]
+        }
+    },
+    methods: {
+        getImgPath(imageName){
+            return new URL(`../assets/img/${imageName}`, import.meta.url).href
+        }
+    }
 }
 </script>
 
@@ -13,21 +148,20 @@ export default {
                     <h3>dc comics</h3>
                     <nav>
                         <ul>
-                            <li><a href="#">Characters</a></li>
-                            <li><a href="#">Comics</a></li>
-                            <li><a href="#">Movies</a></li>
-                            <li><a href="#">TV</a></li>
-                            <li><a href="#">Games</a></li>
-                            <li><a href="#">Videos</a></li>
-                            <li><a href="#">News</a></li>
+                            <li
+                            v-for="(item, index) in dcComics"
+                            :key="index"
+                            ><a :href="item.href">{{item.text}}</a></li>
                         </ul>
                     </nav>
                     <div class="shop">
                         <h3>shop</h3>
                         <nav>
                         <ul>
-                            <li><a href="#">Shop DC</a></li>
-                            <li><a href="#">Shop DC Collectibles</a></li>
+                            <li
+                            v-for="(item, index) in shop"
+                            :key="index"
+                            ><a :href="item.href">{{item.text}}</a></li>
                         </ul>
                         </nav>
                     </div>
@@ -39,17 +173,11 @@ export default {
                     <h3>DC</h3>
                     <nav>
                         <ul>
-                            <li><a href="#">Terms Of Use</a></li>
-                            <li><a href="#">Privacy Policy (new)</a></li>
-                            <li><a href="#">Ad choices</a></li>
-                            <li><a href="#">Advertising</a></li>
-                            <li><a href="#">Job</a></li>
-                            <li><a href="#">Subscriptions</a></li>
-                            <li><a href="#">Talent Workshops</a></li>
-                            <li><a href="#">CPSC Certificates</a></li>
-                            <li><a href="#">Ratings</a></li>
-                            <li><a href="#">Shop Help</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li
+                            v-for="(item, index) in dc"
+                            :key="index"
+                            ><a :href="item.href">{{item.text}}</a></li>
+
                         </ul>
                     </nav>
                 </div>
@@ -57,12 +185,10 @@ export default {
                     <h3>sites</h3>
                     <nav>
                         <ul>
-                            <li><a href="#">DC</a></li>
-                            <li><a href="#">MAD Magazine</a></li>
-                            <li><a href="#">DC Kids</a></li>
-                            <li><a href="#">DC Universe</a></li>
-                            <li><a href="#">DC Power Visa</a></li>
-
+                            <li
+                            v-for="(item, index) in sites"
+                            :key="index"
+                            ><a :href="item.href">{{item.text}}</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -80,11 +206,10 @@ export default {
         <div class="socials">
             <h2>follow us</h2>
             <ul>
-                <li><a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a></li>
-                <li><a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a></li>
-                <li><a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a></li>
-                <li><a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a></li>
-                <li><a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a></li>
+                <li
+                v-for="(item, index) in socials"
+                :key="index"
+                ><a href="#"><img :src="getImgPath(item.src)" alt=""></a></li>
             </ul>
         </div>
         </div>
