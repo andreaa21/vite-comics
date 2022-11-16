@@ -47,7 +47,9 @@ export default {
             <nav>
                 <ul>
                     <li v-for="(item, index) in menu" :key="index">
-                        <img :src="getImgPath(item.src)" alt="{{item.text}}">
+                        <div class="image">
+                            <img :src="getImgPath(item.src)" alt="{{item.text}}">
+                        </div>
                         <a :href="item.href">{{ item.text }}</a>
                     </li>
                 </ul>
@@ -76,16 +78,19 @@ export default {
 
         li {
             @include centerFlex('vertical');
-        }
+            width: calc(100% / 5);
+            margin: 0 .5rem;
 
-        li:last-of-type img {
-            width: 60px;
-        }
+            .image {
+                height: 70px;
+                width: 60px;
+                margin-right: 1rem;
 
-        img {
-            width: 40px;
-            margin-right: 20px;
-
+                img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
         }
 
         a {
