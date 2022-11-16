@@ -193,8 +193,9 @@ export default {
                 <div class="socials">
                     <h2>follow us</h2>
                     <ul>
-                        <li v-for="(item, index) in socials" :key="index"><a href="#"><img :src="getImgPath(item.src)"
-                                    alt="{{item.href}}"></a></li>
+                        <li v-for="(item, index) in socials" :key="index">
+                            <a href="#"><img :src="getImgPath(item.src)" alt="{{item.href}}"></a>
+                        </li>
                     </ul>
                 </div>
             </div>

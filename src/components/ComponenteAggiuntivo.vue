@@ -1,9 +1,9 @@
 <script>
 export default {
     name: 'ComponenteAggiuntivo',
-    data(){
-        return{
-            menu:[
+    data() {
+        return {
+            menu: [
                 {
                     text: 'Digital Comics',
                     href: '#',
@@ -33,7 +33,7 @@ export default {
         }
     },
     methods: {
-        getImgPath(imageName){
+        getImgPath(imageName) {
             return new URL(`../assets/img/${imageName}`, import.meta.url).href
         }
     }
@@ -46,12 +46,9 @@ export default {
         <div class="container">
             <nav>
                 <ul>
-                    <li
-                    v-for="(item, index) in menu"
-                    :key="index"
-                    >
+                    <li v-for="(item, index) in menu" :key="index">
                         <img :src="getImgPath(item.src)" alt="{{item.text}}">
-                        <a :href="item.href">{{item.text}}</a>
+                        <a :href="item.href">{{ item.text }}</a>
                     </li>
                 </ul>
             </nav>
@@ -62,29 +59,36 @@ export default {
 
 
 <style lang="scss" scoped>
-
 @use '../styles/partials/variables' as *;
 @use '../styles/partials/mixin' as *;
 
-.wrapper{
+.wrapper {
     background-color: $main-color;
     height: 155px;
     color: white;
     @include centerFlex('vertical');
-    ul{
+
+    ul {
         display: flex;
         justify-content: space-between;
         list-style: none;
         padding: 0 .5rem;
-        li{
+
+        li {
             @include centerFlex('vertical');
         }
-        img{
+
+        li:last-of-type img {
+            width: 60px;
+        }
+
+        img {
             width: 40px;
             margin-right: 20px;
 
         }
-        a{
+
+        a {
             color: white;
             text-decoration: none;
             text-transform: uppercase;
@@ -92,5 +96,4 @@ export default {
         }
     }
 }
-
 </style>
