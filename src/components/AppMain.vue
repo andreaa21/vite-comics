@@ -1,21 +1,32 @@
 <script>
 
 import ComicCard from './ComicCard.vue';
+import comicsData from '../data/data';
 
 export default {
     name: 'AppMain',
     components:{
       ComicCard
+    },
+    data(){
+      return {
+        comics:comicsData
+      }
     }
 }
 </script>
 
 <template>
 <main>
-  <div class="container debug cards">
-    <ComicCard />
+  <div class="container cards">
+    <ComicCard 
+    v-for="(comic, index) in comics"
+    :key="index"
+    :img="comic.thumb"
+    :text="comic.series"
+    />
   </div>
-  <div class="btn-container debug">
+  <div class="btn-container">
     <button>load more</button>
   </div>
 </main>

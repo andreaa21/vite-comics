@@ -1,17 +1,23 @@
 
 <script>
-export default {
-    name: 'ComicCard'
 
+
+
+export default {
+    name: 'ComicCard',
+    props:{
+        img: String,
+        text: String
+    }
 }
 </script>
 
 <template>
-    <div class="card debug">
+    <div class="card">
         <div class="card-img">
-
+            <img :src="img" :alt="text">
         </div>
-        <div class="card-text">card</div>
+        <div class="card-text">{{text}}</div>
     </div>
   
 </template>
