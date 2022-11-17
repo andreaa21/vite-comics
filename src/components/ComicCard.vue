@@ -31,6 +31,7 @@ export default {
         padding: 1rem;
         .card-text{
             text-align: center;
+            margin-top: 1rem;
         }
     }
 </style>
